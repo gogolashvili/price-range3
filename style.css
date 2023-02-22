@@ -1,0 +1,44 @@
+.cont {
+  width: 100vw;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 100px;
+}
+.but1 {
+  width: 250px;
+  height: 50px;
+  background-color: blue;
+  color: white;
+  font-size: 25px;
+  border-radius: 15px;
+  border: none;
+}
+.but2 {
+  width: 250px;
+  height: 50px;
+  background-color: blue;
+  color: white;
+  font-size: 25px;
+  border-radius: 15px;
+  border: none;
+}
+.but3 {
+  width: 150px;
+  height: 50px;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  font-size: 25px;
+  border-radius: 15px;
+  border: none;
+}
+.but4 {
+  width: 150px;
+  height: 50px;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  font-size: 25px;
+  border-radius: 15px;
+  border: none;
+}
