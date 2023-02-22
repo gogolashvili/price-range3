@@ -15,3 +15,21 @@ let za = document.querySelector(".but4");
 let min = document.querySelector(".Min");
 let max = document.querySelector(".Max");
 let filter = document.querySelector(".filter");
+
+products.forEach((item) => {
+  let section = document.createElement("div");
+  document.body.appendChild(section);
+  section.classList.add("section");
+
+  let card = document.createElement("div");
+  card.classList.add("card");
+  section.appendChild(card);
+
+  let name = document.createElement("p");
+  card.appendChild(name);
+  name.innerHTML = "Product Name: " + item[0];
+
+  let price = document.createElement("p");
+  card.appendChild(price);
+  price.innerHTML = "Product Price: " + item[1] + "$";
+});
