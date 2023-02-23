@@ -34,27 +34,27 @@ products.forEach((item) => {
   price.innerHTML = "Product Price: " + item[1] + "$";
 });
 
-let gafiltruliArray = [];
-
 filter.addEventListener("click", function () {
+  section.innerHTML = "";
+  let gafiltruliArray = [];
   products.filter((product) => {
     if (product[1] > min.value && product[1] < max.value) {
       console.log(product);
       gafiltruliArray.push(product);
     }
-    section.innerHTML = "";
-    gafiltruliArray.forEach((item) => {
-      let card = document.createElement("div");
-      card.classList.add("card");
-      section.appendChild(card);
+  });
 
-      let name = document.createElement("p");
-      card.appendChild(name);
-      name.innerHTML = "Product Name: " + item[0];
+  gafiltruliArray.forEach((item) => {
+    let card = document.createElement("div");
+    card.classList.add("card");
+    section.appendChild(card);
 
-      let price = document.createElement("p");
-      card.appendChild(price);
-      price.innerHTML = "Product Price: " + item[1] + "$";
-    });
+    let name = document.createElement("p");
+    card.appendChild(name);
+    name.innerHTML = "Product Name: " + item[0];
+
+    let price = document.createElement("p");
+    card.appendChild(price);
+    price.innerHTML = "Product Price: " + item[1] + "$";
   });
 });
