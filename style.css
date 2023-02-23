@@ -103,8 +103,6 @@ label {
 }
 
 .section {
-  width: 100vw;
-  height: 100px;
   flex-direction: column;
   display: flex;
   justify-content: space-between;

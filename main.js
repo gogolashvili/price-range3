@@ -12,15 +12,15 @@ let lowHigh = document.querySelector(".but1");
 let highLow = document.querySelector(".but2");
 let az = document.querySelector(".but3");
 let za = document.querySelector(".but4");
-let min = document.querySelector(".Min");
-let max = document.querySelector(".Max");
+let min = document.querySelector(".min");
+let max = document.querySelector(".max");
 let filter = document.querySelector(".filter");
 
-products.forEach((item) => {
-  let section = document.createElement("div");
-  document.body.appendChild(section);
-  section.classList.add("section");
+let section = document.createElement("section");
+document.body.appendChild(section);
+section.classList.add("section");
 
+products.forEach((item) => {
   let card = document.createElement("div");
   card.classList.add("card");
   section.appendChild(card);
@@ -32,4 +32,29 @@ products.forEach((item) => {
   let price = document.createElement("p");
   card.appendChild(price);
   price.innerHTML = "Product Price: " + item[1] + "$";
+});
+
+let gafiltruliArray = [];
+
+filter.addEventListener("click", function () {
+  products.filter((product) => {
+    if (product[1] > min.value && product[1] < max.value) {
+      console.log(product);
+      gafiltruliArray.push(product);
+    }
+    section.innerHTML = "";
+    gafiltruliArray.forEach((item) => {
+      let card = document.createElement("div");
+      card.classList.add("card");
+      section.appendChild(card);
+
+      let name = document.createElement("p");
+      card.appendChild(name);
+      name.innerHTML = "Product Name: " + item[0];
+
+      let price = document.createElement("p");
+      card.appendChild(price);
+      price.innerHTML = "Product Price: " + item[1] + "$";
+    });
+  });
 });
