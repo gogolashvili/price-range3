@@ -19,6 +19,24 @@ let section = document.createElement("section");
 document.body.appendChild(section);
 section.classList.add("section");
 
+highLow.addEventListener("click", function () {
+  section.innerHTML = "";
+  products.sort((a, b) => b[1] - a[1]);
+  products.forEach((item) => {
+    let card = document.createElement("div");
+    card.classList.add("card");
+    section.appendChild(card);
+
+    let name = document.createElement("p");
+    card.appendChild(name);
+    name.innerHTML = "Product Name: " + item[0];
+
+    let price = document.createElement("p");
+    card.appendChild(price);
+    price.innerHTML = "Product Price: " + item[1] + "$";
+  });
+});
+
 lowHigh.addEventListener("click", function () {
   section.innerHTML = "";
   products.sort((a, b) => a[1] - b[1]);
@@ -33,7 +51,7 @@ lowHigh.addEventListener("click", function () {
 
     let price = document.createElement("p");
     card.appendChild(price);
-    price.innerHTML = `${"Product Price: " + item[1]}$`;
+    price.innerHTML = "Product Price: " + item[1] + "$";
   });
 });
 
