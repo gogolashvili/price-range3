@@ -15,10 +15,27 @@ let za = document.querySelector(".but4");
 let min = document.querySelector(".min");
 let max = document.querySelector(".max");
 let filter = document.querySelector(".filter");
-
 let section = document.createElement("section");
 document.body.appendChild(section);
 section.classList.add("section");
+
+lowHigh.addEventListener("click", function () {
+  section.innerHTML = "";
+  products.sort((a, b) => a[1] - b[1]);
+  products.forEach((item) => {
+    let card = document.createElement("div");
+    card.classList.add("card");
+    section.appendChild(card);
+
+    let name = document.createElement("p");
+    card.appendChild(name);
+    name.innerHTML = "Product Name: " + item[0];
+
+    let price = document.createElement("p");
+    card.appendChild(price);
+    price.innerHTML = `${"Product Price: " + item[1]}$`;
+  });
+});
 
 products.forEach((item) => {
   let card = document.createElement("div");
