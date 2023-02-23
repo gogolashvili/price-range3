@@ -55,6 +55,24 @@ lowHigh.addEventListener("click", function () {
   });
 });
 
+az.addEventListener("click", function () {
+  section.innerHTML = "";
+  products.sort((a, b) => a[0].localeCompare(b[0]));
+  products.forEach((item) => {
+    let card = document.createElement("div");
+    card.classList.add("card");
+    section.appendChild(card);
+
+    let name = document.createElement("p");
+    card.appendChild(name);
+    name.innerHTML = "Product Name: " + item[0];
+
+    let price = document.createElement("p");
+    card.appendChild(price);
+    price.innerHTML = "Product Price: " + item[1] + "$";
+  });
+});
+
 products.forEach((item) => {
   let card = document.createElement("div");
   card.classList.add("card");
